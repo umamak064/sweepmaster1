@@ -1,15 +1,12 @@
+import os
 import streamlit as st
-import importlib.util
 
 st.set_page_config(page_title="SweepMaster", layout="wide")
 
-# ✅ Check if openpyxl is installed
-if importlib.util.find_spec("openpyxl") is not None:
-    st.success("✅ openpyxl is installed!")
-else:
-    st.error("❌ openpyxl is NOT installed!")
+st.write("Installing dependencies... Please wait ⏳")
+os.system("pip install --upgrade pip")  # ✅ Upgrade pip to avoid issues
+os.system("pip install openpyxl")  # ✅ Force install openpyxl before execution
 
-import os
 import pandas as pd
 from io import BytesIO
 
