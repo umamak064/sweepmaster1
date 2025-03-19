@@ -31,7 +31,7 @@ if uploaded_files:
         if file_ext==".csv":
             df=pd.read_csv(file, engine="openpyxl")   #agr file extension csv hogi tou yeh csv me format me uploaded file ko read kareiga 
         elif file_ext==".xlsx":
-            df=pd.read_excel(file)    
+            df=pd.read_excel(file, engine="openpyxl")    
         else:
             st.error(f"unspported file type: {file_ext}") 
             continue 
