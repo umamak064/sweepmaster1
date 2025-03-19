@@ -1,6 +1,10 @@
-import streamlit as st
-import pandas as pd
 import os
+import streamlit as st
+
+st.write("Installing dependencies... Please wait ⏳")
+os.system("pip install openpyxl")  # ✅ Force install openpyxl
+
+import pandas as pd
 from io import BytesIO
 
 st.set_page_config(page_title="SweepMaster", layout="wide")
