@@ -10,6 +10,11 @@ os.system("pip install openpyxl")  # ✅ Force install openpyxl before execution
 import pandas as pd
 from io import BytesIO
 
+if importlib.util.find_spec("openpyxl") is not None:
+    st.success("✅ openpyxl is installed!")
+else:
+    st.error("❌ openpyxl is NOT installed! 🚨")
+    
 # ✅ Install dependencies before running the app
 st.write("Installing dependencies... Please wait ⏳")
 os.system("pip install openpyxl")
