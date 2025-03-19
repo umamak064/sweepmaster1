@@ -1,7 +1,13 @@
 import streamlit as st
+import importlib.util
 
-# ✅ Set Page Config must be at the top
 st.set_page_config(page_title="SweepMaster", layout="wide")
+
+# ✅ Check if openpyxl is installed
+if importlib.util.find_spec("openpyxl") is not None:
+    st.success("✅ openpyxl is installed!")
+else:
+    st.error("❌ openpyxl is NOT installed!")
 
 import os
 import pandas as pd
