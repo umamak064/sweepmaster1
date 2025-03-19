@@ -1,13 +1,15 @@
-import os
 import streamlit as st
 
-st.write("Installing dependencies... Please wait ⏳")
-os.system("pip install openpyxl")  # ✅ Force install openpyxl
+# ✅ Set Page Config must be at the top
+st.set_page_config(page_title="SweepMaster", layout="wide")
 
+import os
 import pandas as pd
 from io import BytesIO
 
-st.set_page_config(page_title="SweepMaster", layout="wide")
+# ✅ Install dependencies before running the app
+st.write("Installing dependencies... Please wait ⏳")
+os.system("pip install openpyxl")
 
 #custom css
 st.markdown(
