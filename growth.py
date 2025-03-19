@@ -29,7 +29,7 @@ if uploaded_files:
         file_ext=os.path.splitext(file.name)[-1].lower()  #file extension  or full file nname ko display kareiga in lower case
 
         if file_ext==".csv":
-            df=pd.read_csv(file)   #agr file extension csv hogi tou yeh csv me format me uploaded file ko read kareiga 
+            df=pd.read_csv(file, engine="openpyxl")   #agr file extension csv hogi tou yeh csv me format me uploaded file ko read kareiga 
         elif file_ext==".xlsx":
             df=pd.read_excel(file)    
         else:
